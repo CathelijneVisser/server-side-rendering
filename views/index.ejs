@@ -1,0 +1,34 @@
+<%- include("./partials/head.ejs") %>
+
+    <h2>smartzones</h2>
+    <% smartzones.forEach(smartzone=> { %>
+        <article>
+            <img src="<%= smartzone.image.url %>" alt="">
+
+            <% if (smartzone.reservation==null) { %>
+                Now available
+                <% } else { %>
+                    Not available
+                    <% } %>
+
+                        <h3>SZ <%= smartzone.name %>
+                        </h3>
+
+                        <p>
+                            <%= smartzone.address %>,<%= smartzone.town %>
+                        </p>
+                        <p><span>Price:</span> €1,00 / 15 min</p>
+                        <% if (smartzone.reservation !==null) { %>
+                            <button style="--reserved: gray;" title="book now">Book now</button>
+                            <% } else { %>
+                                <button title="book now">Book now</button>
+                                <% } %>
+
+
+                                    <button title="book later">Book later</button>
+        </article>
+        <% }) %>
+
+            <%- include("./nav.ejs") %>
+
+                <%- include("./partials/foot.ejs") %>
