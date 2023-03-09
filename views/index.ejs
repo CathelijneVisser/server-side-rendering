@@ -28,13 +28,23 @@
 
                                         <button title="book later">Book later</button>
             </a></li>
-            <article>
-            <dl>
+            <article >
+                <img src="<%= smartzone.image.url %>" alt="">
+                <header>
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                <%= smartzone.address %>
+                </header>
+                <dl>
                 <dt>Name</dt>
                 <dd><%= smartzone.address %></dl>
                 <dt>Description</dt>
                 <dd><%= smartzone.description %></dl>
+                <dt>Size</dt>
+                <dd><%= smartzone.size %></dl>
+                <dt>Utilization</dt>
+                <dd><%= smartzone.utilization %></dl>
                 </dl>
+                <a href="https://www.google.nl/maps/place/<%= smartzone.address %>" target="blank">Bekijken in Google maps</a>
             </article>
         <% }) %>
     </ul>
