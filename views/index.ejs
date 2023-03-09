@@ -1,5 +1,8 @@
 <%- include("./partials/head.ejs") %>
-
+<article class="overzicht">
+    <header>
+        <img src="" alt="Logo">
+    </header>
     <h2>smartzones</h2>
     <ul>
         <% smartzones.forEach(smartzone=> { %>
@@ -28,6 +31,8 @@
 
                                         <button title="book later">Book later</button>
             </a></li>
+    </ul>
+
             <article >
                 <img src="<%= smartzone.image.url %>" alt="">
                 <header>
@@ -48,8 +53,12 @@
             </article>
         <% }) %>
     </ul>
+    <%- include("./nav.ejs") %>
+</article>
 
-
-            <%- include("./nav.ejs") %>
+            
+    <article class="map">
+        <p>Dit wordt de map.</p>
+    </article>
 
                 <%- include("./partials/foot.ejs") %>

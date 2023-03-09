@@ -1,0 +1,38 @@
+@font-face {
+	font-family: "Rajdhani";
+	src: url("../assets/fonts/Rajdhani-SemiBold.ttf") format("ttf"),
+		url("../assets/fonts/Rajdhani-SemiBold.woff") format("woff");
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Rajdhani, sans-serif;
+	scroll-behavior: smooth;
+}
+
+:root {
+    --purple: #524dd0;
+    --gradient: linear-gradient(90deg, #524dd0 0%, #84389e 100%);
+}
+
+main {
+    display: flex;
+}
+
+.overzicht{
+    flex: 0 1 30%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overzicht header {
+    height: 4em;
+    align-items: center;
+}
+
+.map {
+    flex-basis: 1 0 70%;
+}
