@@ -1,39 +1,35 @@
 <%- include("./partials/head.ejs") %>
-<article class="overzicht">
+<article class="summary">
     <header>
         <img src="" alt="Logo">
     </header>
     <h2>smartzones</h2>
     <ul>
         <% smartzones.forEach(smartzone=> { %>
-            <li><a href="">
-                <img src="<%= smartzone.image.url %>" alt="">
+            <li>
+                <div class="container-img">
+                   <img src="<%= smartzone.image[0].url %>" alt="">
+                </div>
+                <div class="container-li">
+                    <% if (smartzone.reservation==null) { %>
+                        Now available
+                        <% } else { %>
+                        Occupied
+                    <% } %>
 
-                <% if (smartzone.reservation==null) { %>
-                    Now available
+                    <h3>SZ <%= smartzone.name %></h3>
+                    <p><%= smartzone.address %>,<%= smartzone.town %></p>
+                    <p><span>Price:</span> €1,00 / 15 min</p>
+                    <% if (smartzone.reservation !==null) { %>
+                           <button style="--reserved-bg: #8d8d8d; --reserved-c: #737373;">Book now</button>
                     <% } else { %>
-                        Not available
-                        <% } %>
+                        <button >Book now</button>
+                    <% } %>
+                    <button>Book later</button>
+                </div>
+            </li>
 
-                            <h3>SZ <%= smartzone.name %>
-                            </h3>
-
-                            <p>
-                                <%= smartzone.address %>,<%= smartzone.town %>
-                            </p>
-                            <p><span>Price:</span> €1,00 / 15 min</p>
-                            <% if (smartzone.reservation !==null) { %>
-                                <button style="--reserved: gray;" title="book now">Book now</button>
-                                <% } else { %>
-                                    <button title="book now">Book now</button>
-                                    <% } %>
-
-
-                                        <button title="book later">Book later</button>
-            </a></li>
-    </ul>
-
-            <article >
+            <article class="detail">
                 <img src="<%= smartzone.image.url %>" alt="">
                 <header>
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
@@ -55,10 +51,9 @@
     </ul>
     <%- include("./nav.ejs") %>
 </article>
-
             
-    <article class="map">
-        <p>Dit wordt de map.</p>
-    </article>
+<article class="map">
+    <p>Dit wordt de map.</p>
+</article>
 
-                <%- include("./partials/foot.ejs") %>
+<%- include("./partials/foot.ejs") %>

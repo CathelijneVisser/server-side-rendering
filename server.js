@@ -13,7 +13,6 @@ app.use(express.static('public'))
 // Maak een route voor de index
 app.get('/', (request, response) => {
     let urlSmartzones = url + "/smartzones" 
-    console.log("url", urlSmartzones);
 
   fetchJson(urlSmartzones).then((data) => {
     response.render('index', data)
